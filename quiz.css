@@ -9,7 +9,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-   background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #533483);
+/*    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #533483); */
+      background-color: rgb(19, 25, 41);
      
 }   
 
@@ -19,7 +20,8 @@ body{
     min-height: 400px;
     max-width: 600px; 
     padding: 20px;
-    background: rgba(255, 255, 255, 0.08);  /* slightly less bright */
+/*     background: rgba(255, 255, 255, 0.08);   */
+    background: rgba(25,33,44); 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -288,3 +290,4 @@ body.light-mode .answers.wrong {
     background-color: #ffcdd2;  /* light red */
     border-color: #c62828;      /* dark red */
 }
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+      <!-- theme toggle (add this near top of body) -->
+  <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+
+    <div class="container">
+
+        <div class="main-container ">
+            <h1 class="heading">Online-Quiz</h1> 
+            <div class="setting">
+                <label for="num-of-question">Number Of Questions</label>
+                <select name="" id="numquestion">
+                    <option value="5" >5</option>
+                    <option value="10" >10</option>
+                    <option value="15" >15</option>
+                    <option value="20" >20</option>
+                </select>
+                <label for="category">Select Category</label>
+                <select name="" id="category">
+                    <option value="">any category</option>
+                    <option value="9">general knowledge</option>               
+                    <option value="10">books</option>               
+                    <option value="11">films</option>               
+                    <option value="12">music</option>                
+                    <option value="14">television</option>              
+                    <option value="15">video games</option>               
+                    <option value="16">board games</option>               
+                    <option value="17">science and nature</option>               
+                    <option value="18">computers</option>               
+                    <option value="19">mathematics</option>              
+                    <option value="20">mythology</option>               
+                    <option value="21">sports</option>               
+                    <option value="22">geography</option>               
+                    <option value="23">history</option>               
+                    <option value="24">politics</option>
+                    <option value="25">art</option>
+                    <option value="28">vehicles</option>  
+                </select>
+                <label for="difficulty">Select Difficulty</label>
+                <select name="" id="difficulty">
+                    <option value="easy" >Easy</option>
+                    <option value="medium" >Medium</option>
+                    <option value="hard" >Hard</option>
+                </select>
+                <label for="time">Select Time Per Question</label>
+                <select name="" id="time">
+                    <option value="10" >10sec</option>
+                    <option value="15" >15sec</option>
+                    <option value="20" >20sec</option>
+                    <option value="30" >30sec</option>
+                </select>
+                <button class="btn start" onclick="StartQuiz()">Start Quiz</button>
+            </div>
+        </div>
+        <div class="quiz hide">
+            <div class="timer">
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text"></span>
+                </div>
+            </div>
+            <div class="ques-comple">
+                <div class="num">
+                    Question <span class="current">1</span><span class="total">/10</span>
+                </div>
+                <div class="question"></div>
+                <div class="answer-box"></div>
+                <button class="btn submit" disabled>Submit</button>
+                <button class="btn next">Next</button>
+            </div>
+        </div>
+        <div class="last-page hide">
+            <h1 class="heading">Quiz App</h1>
+            <div class="score">
+                <span class="score-text">Your Score is : </span>
+                <div>
+                    <span class="final-score">0</span>
+                    <span class="total-score">/10</span>
+                </div>
+            </div>
+            <button class="btn restart">Restart Quiz</button>
+        </div>
+    </div>
+</body>
+<script src="quiz.js"></script>
+</html>

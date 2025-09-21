@@ -1,0 +1,290 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #533483);
+     
+}   
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    max-width: 600px; 
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);  /* slightly less bright */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+}
+
+.heading{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 25px;
+}
+label{
+    display: block;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 5px;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.btn{
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(31, 75, 40);
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s linear;
+    margin-top: 25px;
+}
+.btn:hover{                        
+    background-color: rgb(8, 62, 31);
+}
+.btn:disabled{
+    cursor: not-allowed;
+    background-color: #576081;
+}
+.hide{
+    display: none;
+}
+.timer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.timer .progress{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 30px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    border: 3px solid grey;
+}
+.timer .progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: linear-gradient(to right,rgb(243, 6, 6),rgb(104, 237, 60));
+    transition:1s linear ;
+}
+.timer .progress .progress-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+.ques-comple .num{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.ques-comple .num .total{
+    font-size: 16px;
+}
+.question{
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 20px;
+}
+.answer-box .answers {
+    width: 100%;
+    /* height: 10px; */
+    border: 3px solid white;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.4s linear;
+}
+.answers .check-box{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+    font-size: 16px;
+}
+.answers .check-box .icon{
+    opacity: 0;
+}
+.answers:hover:not(.checked) .check-box ,
+.answers.selected .check-box{
+    background-color: rgb(17, 195, 255);
+    border-color: rgb(203, 211, 243);
+}
+.answers.selected .check-box .icon{
+    opacity: 1;
+}
+.answers.correct{
+    border-color: rgb(21, 234, 21);
+}
+.answers.wrong{
+    border-color: rgb(242, 15, 15);
+}
+.ques-comple,.answer-box{
+    margin-bottom: 10px;
+}
+.next ,.submit{
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(31, 75, 40);
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s linear;
+    margin-bottom: 10px;
+}
+.next{
+    display: none;
+}
+.last-page .score{
+    color: white;
+    font-size: 30px;
+    font-weight: 500px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+.score .score-text{
+    color: white;
+    font-size: 26px;
+    margin-bottom: 120px;
+}
+@media (max-width:768px){
+    .container{
+        min-height: 50vh;
+        max-width: 70%;
+    }
+    .answers{
+        display: flex;
+    }
+}
+
+/* for the switch mode light to dark mode */
+
+.theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Default = Dark Mode (already in your code) */
+
+/* 🌞 Light Mode Styles */
+body.light-mode {
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+  color: black;
+}
+
+/* Glass container */
+body.light-mode .container {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+/* Headings, labels, text */
+body.light-mode .heading,
+body.light-mode label,
+body.light-mode .score,
+body.light-mode .question,
+body.light-mode .ques-comple .num {
+  color: black;
+}
+
+/* Select dropdowns */
+body.light-mode select {
+  background: #ffffff;
+  color: black;
+  border: 1px solid #aaa;
+}
+
+
+/* Answer boxes */
+body.light-mode .answer-box .answers {
+  border: 2px solid black;
+  color: black;
+}
+
+/* Light mode - score page text */
+body.light-mode .last-page .score,
+body.light-mode .last-page .score-text,
+body.light-mode .last-page .final-score,
+body.light-mode .last-page .total-score {
+  color: black;
+}
+
+
+/* Dark mode (default) */
+.answers.correct {
+    border-color: rgb(21, 234, 21);
+    color: #fff;
+}
+.answers.wrong {
+    border-color: rgb(242, 15, 15);
+    color: #fff;
+}
+
+/* Light mode overrides */
+body.light-mode .answers.correct {
+    background-color: #c8e6c9;  /* light green */
+    border-color: #2e7d32;      /* dark green */ 
+}
+
+body.light-mode .answers.wrong {
+    background-color: #ffcdd2;  /* light red */
+    border-color: #c62828;      /* dark red */
+}
